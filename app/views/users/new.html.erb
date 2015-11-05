@@ -1,0 +1,25 @@
+<h1>Sign Up</h1>
+
+<% if @user %>
+	<div id="errors">
+	    <ul>
+  			<% @user.errors.each do |error, desc| %>
+					<li><%= error %> <%= desc %></li>
+				<% end %>
+	    </ul>
+	</div>
+<% end %>
+
+<%= form_for :user do |f| %>
+
+<%= f.text_field :full_name, :placeholder => "Full Name" %>
+<br>
+<%= f.text_field :email, :placeholder => "Email" %>
+<br>
+<%= f.password_field :password, :placeholder => "Password" %>
+<br>
+<%= f.password_field :password_confirmation, :placeholder => "Confirm Password" %>
+<br>
+<%= f.submit "Sign Up" %>
+
+<% end %>

@@ -1,4 +1,24 @@
 Rails.application.routes.draw do
+
+  get 'auth/:provider/callback', to: 'sessions#fb_create'
+  get 'auth/failure', to: redirect('/')
+
+  get 'login', to: 'sessions#new', as: 'login'
+  post 'login', to: 'sessions#create'
+
+  get 'sessions/create'
+
+  delete 'logout', to: 'sessions#destroy', as: 'logout'
+
+  get 'home/index'
+
+  root 'home#index'
+
+  get 'signup', to: 'users#new', as: 'signup'
+  post 'signup', to: 'users#create'
+
+  resources :users, except: :new
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

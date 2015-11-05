@@ -1,0 +1,17 @@
+<h1>Log In</h1>
+
+<% if @error %>
+	<div id="errors">
+		<p><%= @error %></p>
+	</div>
+<% end %>
+
+<%= form_for :user do |f| %>
+
+<%= f.text_field :email, :placeholder => "Email" %>
+<br>
+<%= f.password_field :password, :placeholder => "Password" %>
+<br>
+<%= f.submit "Log In" %>
+
+<% end %>

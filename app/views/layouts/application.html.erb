@@ -8,42 +8,73 @@
 </head>
 <body>
 
-<%= link_to root_path do %>
-<h1>homespace</h1>
-<% end %>
+<nav class="navbar navbar-default nav-no-bottom">
+	<div class="container-fluid">
+		<div class="navbar-header">
+			<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
 
-<div id="fb_user_nav">
+			<%= link_to root_path do %>
+			<div class="navbar-brand">
+				<p>homespace</p>
+			</div>
+			<% end %>
+		</div>
 
+		<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+			<% if logged_in? %>
+				<ul class="nav navbar-nav pull-right">
+					<li>
+						<button type="button" class="btn btn-default navbar-btn">Become a host</button>
+					</li>
 
-</div>
+					<li>
+						<a href=""><%= current_user.full_name %></a>
+					</li>
+					<li>
+						<%= link_to "Log Out", logout_path, :method => :delete %>
+					</li>
+				</ul>
 
-<% if logged_in? %>
-	<div>
-		<p>Logged in as: <strong><%= current_user.full_name %></strong>!</p>
-		<%= link_to logout_path, :method => :delete do %>
-		<p>Log Out</p>
-		<% end %>
+			<% else %>
+				<ul class="nav navbar-nav pull-right">
+					<li>
+						<button type="button" class="btn btn-default navbar-btn">Become a host</button>
+					</li>
+
+					<li>
+						<%= link_to "Sign Up", signup_path %>
+					</li>
+
+					<li>
+						<%= link_to "Log In", login_path %>
+					</li>
+
+					<li>
+						<%= link_to "Log in with Facebook", "/auth/facebook", id: "sign_in" %>
+					</li>
+				</ul>
+			<% end %>
+		</div>
 	</div>
+</nav>
 
-<% else %>
+<% flash.each do |key, value| %>
+		<div class="row">
+			<div class="col-xs-1 col-sm-3"></div>
 
-	<%= link_to "Sign in with Facebook", "/auth/facebook", id: "sign_in" %>
+			<div class="alert alert-success col-xs-10 col-sm-6" role="alert">
+				<button type="button" class="close" data-dismiss="alert">&times;</button>
+					<p><%= value %></p>
+			</div>
 
-	<%= link_to signup_path do %>
-	<p>Sign Up</p>
-	<% end %>
-
-	<%= link_to login_path do %>
-	<p>Log In</p>
-	<% end %>
-
+			<div class="col-xs-1 col-sm-3"></div>
+		</div>
 <% end %>
-
-<div id="flash">
-  <% flash.each do |key, value| %>
-		<p><%= value %></p>
-  <% end %>
-</div>
 
 <%= yield %>
 

@@ -1,0 +1,38 @@
+// "bootstrap-sprockets" must be imported before "bootstrap" and "bootstrap/variables"
+$baseFontFamily: 'Avant Garde','Helvetica Neue',Arial,Helvetica,sans-serif  !default;
+
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+.nav-no-bottom {
+	margin-bottom: 0;
+}
+
+.bg {
+  background: linear-gradient(rgba(0, 0, 0, 0.2),rgba(0, 0, 0, 0.2)), url(asset-path('bg2.jpg')) no-repeat center center; 
+  position: fixed;
+  background-size: cover;
+  width: 100%;
+	height: 500px;
+  top:52px;
+  left:0;
+  z-index: -1;
+
+}
+
+.jumbotron {
+  height: 500px;
+  color: white;
+  text-shadow: black 0.1em 0.1em 0.1em;
+  background:transparent;
+}
+
+.big-words {
+	text-align: center;
+	padding-top: 150px;
+
+	p {
+		font-weight: 100;
+		font-size: 4em;
+	}
+}

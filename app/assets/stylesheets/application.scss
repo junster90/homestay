@@ -51,18 +51,50 @@ $baseFontFamily: 'Avant Garde','Helvetica Neue',Arial,Helvetica,sans-serif  !def
 }
 
 /* FOR LANDING PAGE BIG PIC */
-.bg {
-  background: linear-gradient(rgba(0, 0, 0, 0.2),rgba(0, 0, 0, 0.2)), url(asset-path('bg2.jpg')) no-repeat center center; 
-  position: fixed;
-  background-size: cover;
-  width: 100%;
-  height: 550px;
-  top:0px;
-  left:0;
-  z-index: -1;
+.carousel {
 
+  z-index: -99;
+
+  .item {
+    position: fixed;
+    -moz-background-size: cover;
+    width: 100%;
+    height: 550px;
+    top:0px;
+    left:0;
+    -webkit-transition: opacity ;
+    -moz-transition: opacity ;
+    -ms-transition: opacity ;
+    -o-transition: opacity ;
+    transition: opacity ;
+
+  }
+
+  .one {
+    background: linear-gradient(rgba(0, 0, 0, 0.2),rgba(0, 0, 0, 0.2)), url(asset-path('bg1.jpg')) center center no-repeat;
+    background-size: cover; 
+  }
+
+  .two {
+   background: linear-gradient(rgba(0, 0, 0, 0.2),rgba(0, 0, 0, 0.2)), url(asset-path('bg2.jpg')) center center no-repeat;
+    background-size: cover;  
+  }
+
+  .three {
+   background: linear-gradient(rgba(0, 0, 0, 0.2),rgba(0, 0, 0, 0.2)), url(asset-path('bg3.jpg')) center center no-repeat;
+    background-size: cover; 
+  }
+
+  .four {
+    background: linear-gradient(rgba(0, 0, 0, 0.2),rgba(0, 0, 0, 0.2)), url(asset-path('bg4.jpg')) center center no-repeat;
+    background-size: cover; 
+  }
 }
 
+
+
+
+/* FOR LANDING PAGE BIG WORDS */
 .jumbotron {
   height: 550px;
   color: white;

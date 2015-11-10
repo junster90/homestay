@@ -1,0 +1,96 @@
+<div class="container">
+	<h1>Create a new listing</h1>
+
+	<%= form_for :listing do |f| %>
+
+	<div>
+		<h6> Listing Name </h6>
+		<%= f.text_field :name, :placeholder => "Be clear and descriptive" %>
+	</div>
+	<div>
+		<h6>Summary</h6>
+	<%= f.text_field :summary, :placeholder => "The summary provides an overview of your place. Describe the space, what you love about the neighborhood, and the amenities" %>
+	</div>
+
+	<div>
+		<h3>Bedrooms and Beds</h3>
+		<div>
+		<h6>Bedrooms</h6>
+		<%= f.collection_select :bedroom, ListingsHelper::BEDROOMS, :to_s, :to_s %>
+		</div>
+		<div>
+		<h6>Beds</h6>
+		<%= f.collection_select :bed_count, ListingsHelper::BEDS, :to_s, :to_s %>
+		</div>
+		<div>
+		<h6>Bathrooms</h6>
+		<%= f.collection_select :bathroom, ListingsHelper::BATHROOMS, :to_s, :to_s %>
+		</div>
+	</div>
+
+	<div>
+		<h3>Listing</h3>
+		<div>
+		<h6>Property Type</h6>
+		<%= f.collection_select :hometype, ListingsHelper::HOMETYPES, :to_s, :to_s %>
+		</div>
+		<div>
+		<h6>Room Type</h6>
+		<%= f.collection_select :roomtype, ListingsHelper::ROOMTYPES, :to_s, :to_s %>
+		</div>
+		<div>
+		<h6>Accomodates</h6>
+		<%= f.collection_select :max_guest, ListingsHelper::MAX_GUESTS, :to_s, :to_s %>
+		</div>
+	</div>
+
+	<div>
+		<h3>Help guests find your place</h3>
+		<p>Travelers will use this information to find a place that’s in the right spot.</p>
+
+		<div>
+		<h6>Country</h6>
+		<%= f.collection_select :country, countries_list, :to_s, :to_s %>
+		</div>
+
+		<div>
+		<h6>Street Address</h6>
+		<%= f.text_field :line1, :placeholder => "House name/number + street/road" %>
+		</div>
+
+		<div>
+		<h6>Apt, Suite, Bldg. (optional)</h6>
+		<%= f.text_field :line2, :placeholder => "Apt., suite, building access code" %>
+		</div>
+
+		<div>
+		<h6>City</h6>
+		<%= f.text_field :city %>
+		</div>
+
+		<div>
+		<h6>State</h6>
+		<%= f.text_field :state %>
+		</div>
+
+		<div>
+		<h6>ZIP Code</h6>
+		<%= f.text_field :zip %>
+		</div>
+	</div>
+
+	<div>
+		<h3>Set a nightly price for your space</h3>
+		<p>You can set a price to reflect the space, amenities, and hospitality you’ll be providing.</p>
+
+		<h6>Nightly Price</h6>
+		<%= f.number_field :price %>
+	</div>
+
+	<div>
+		<h3>List your space</h3>
+		<p>Check that your information provided above is accurate and click on the button below to post your listing.</p>
+		<%= f.submit "Create" %>
+	</div>
+	<% end %>
+</div>

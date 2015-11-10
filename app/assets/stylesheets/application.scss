@@ -4,35 +4,81 @@ $baseFontFamily: 'Avant Garde','Helvetica Neue',Arial,Helvetica,sans-serif  !def
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
-.nav-no-bottom {
-	margin-bottom: 0;
+.navbar-btn{
+  border-radius: 0;
+
+  a {
+    text-decoration: none;
+    color: #777;
+  }
+}
+.nav-landing {
+  background-color: transparent;
+  background: transparent;
+  border-color: transparent;
+  margin-bottom: 0;
+
+  p {
+    color: white;
+  }
 }
 
+.nav-landing-list {
+  li a {
+    color: white !important;
+  }
+}
+
+.nav-landing-btn {
+  border-radius: 0px;
+  background: transparent;
+  color: white;
+  /* CSS Transition */
+  -webkit-transition: background .1s ease-in-out, border .1s ease-in-out;
+  -moz-transition: background .1s ease-in-out, border .1s ease-in-out;
+  -ms-transition: background .1s ease-in-out, border .1s ease-in-out;
+  -o-transition: background .1s ease-in-out, border .1s ease-in-out;
+  transition: background .1s ease-in-out, border .1s ease-in-out;
+
+  &:hover {
+    background: rgba(0,0,0,0.2); 
+  }
+
+  a {
+    text-decoration: none;
+    color: white;
+  }
+}
+
+/* FOR LANDING PAGE BIG PIC */
 .bg {
   background: linear-gradient(rgba(0, 0, 0, 0.2),rgba(0, 0, 0, 0.2)), url(asset-path('bg2.jpg')) no-repeat center center; 
   position: fixed;
   background-size: cover;
   width: 100%;
-	height: 500px;
-  top:52px;
+  height: 550px;
+  top:0px;
   left:0;
   z-index: -1;
 
 }
 
 .jumbotron {
-  height: 500px;
+  height: 550px;
   color: white;
   text-shadow: black 0.1em 0.1em 0.1em;
   background:transparent;
+  margin-bottom: 0;
 }
 
 .big-words {
-	text-align: center;
-	padding-top: 150px;
+  text-align: center;
+  padding-top: 150px;
 
-	p {
-		font-weight: 100;
-		font-size: 4em;
-	}
+  p {
+    font-weight: 100;
+    font-size: 4em;
+  }
 }
+
+

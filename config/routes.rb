@@ -1,7 +1,13 @@
 Rails.application.routes.draw do
 
+  get 'home/index'
+  root 'home#index'
+
   get 'auth/:provider/callback', to: 'sessions#fb_create'
   get 'auth/failure', to: redirect('/')
+
+  get 'signup', to: 'users#new', as: 'signup'
+  post 'signup', to: 'users#create'
 
   get 'login', to: 'sessions#new', as: 'login'
   post 'login', to: 'sessions#create'
@@ -10,12 +16,10 @@ Rails.application.routes.draw do
 
   delete 'logout', to: 'sessions#destroy', as: 'logout'
 
-  get 'home/index'
+  get '/listings/new', to: 'listings#new', as: 'listings_new'
+  post '/listings/new', to: 'listings#create'
 
-  root 'home#index'
 
-  get 'signup', to: 'users#new', as: 'signup'
-  post 'signup', to: 'users#create'
 
   resources :users, except: :new
 

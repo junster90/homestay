@@ -8,7 +8,7 @@
 </head>
 <body>
 
-<nav class="navbar navbar-default">
+<nav class="navbar navbar-default nav-landing">
 	<div class="container-fluid">
 		<div class="navbar-header">
 			<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
@@ -27,9 +27,9 @@
 
 		<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 			<% if logged_in? %>
-				<ul class="nav navbar-nav pull-right">
+				<ul class="nav navbar-nav pull-right nav-landing-list">
 					<li>
-					<button type="button" class="btn btn-default navbar-btn"><%= link_to "Become a host", listings_new_path %></button>
+					<button type="button" class="btn btn-default navbar-btn nav-landing-btn"><%= link_to "Become a host", listings_new_path %></button>
 					<li>
 						<a href=""><%= current_user.full_name %></a>
 					</li>
@@ -39,9 +39,9 @@
 				</ul>
 
 			<% else %>
-				<ul class="nav navbar-nav pull-right">
+				<ul class="nav navbar-nav pull-right nav-landing-list">
 					<li>
-						<button type="button" class="btn btn-default navbar-btn"><%= link_to "Become a host", listings_new_path %></button>
+						<button type="button" class="btn btn-default navbar-btn nav-landing-btn"><%= link_to "Become a host", listings_new_path %></button>
 					</li>
 
 					<li>

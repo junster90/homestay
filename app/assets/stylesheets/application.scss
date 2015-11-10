@@ -4,6 +4,11 @@ $baseFontFamily: 'Avant Garde','Helvetica Neue',Arial,Helvetica,sans-serif  !def
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
+.navbar {
+  padding-top:10px;
+  padding-bottom:10px;
+}
+
 .navbar-btn{
   border-radius: 0;
 
@@ -12,6 +17,12 @@ $baseFontFamily: 'Avant Garde','Helvetica Neue',Arial,Helvetica,sans-serif  !def
     color: #777;
   }
 }
+
+.navbar-brand {
+  padding-top: 10px;
+  font-size: 26px;
+}
+
 .nav-landing {
   background-color: transparent;
   background: transparent;
@@ -55,6 +66,7 @@ $baseFontFamily: 'Avant Garde','Helvetica Neue',Arial,Helvetica,sans-serif  !def
 
 .carousel {
   z-index: -99;
+  height: 0px;
 
   .item {
     position: fixed;
@@ -93,11 +105,9 @@ $baseFontFamily: 'Avant Garde','Helvetica Neue',Arial,Helvetica,sans-serif  !def
 }
 
 
-
-
 /* FOR LANDING PAGE BIG WORDS */
 .jumbotron {
-  height: 550px;
+  height: 500px;
   color: white;
   text-shadow: black 0.1em 0.1em 0.1em;
   background:transparent;
@@ -106,11 +116,89 @@ $baseFontFamily: 'Avant Garde','Helvetica Neue',Arial,Helvetica,sans-serif  !def
 
 .big-words {
   text-align: center;
-  padding-top: 150px;
+  padding-top: 80px;
 
   p {
     font-weight: 100;
+    font-size: 2em;
+  }
+
+  .head {
+    font-weight: 200;
     font-size: 4em;
+  }
+}
+
+.big-search-form {
+
+  margin-top: 90px;
+  .input-group {
+    .form-control{
+      width: 500px;
+      border-radius: 0px;
+      background: rgba(255,255,255,0.9);
+      color: black;
+    }
+
+    .btn-success {
+      border-radius: 0px;
+      color: white;
+      /* CSS Transition */
+      -webkit-transition: background .1s ease-in-out, border .1s ease-in-out;
+      -moz-transition: background .1s ease-in-out, border .1s ease-in-out;
+      -ms-transition: background .1s ease-in-out, border .1s ease-in-out;
+      -o-transition: background .1s ease-in-out, border .1s ease-in-out;
+      transition: background .1s ease-in-out, border .1s ease-in-out;
+
+      &:hover {
+        opacity: 0.9;
+      }
+
+      a {
+        text-decoration: none;
+        color: white;
+      }
+    }
+  }
+}
+
+.isolator {
+  position: static;
+  top: 560px;
+  margin: 0 auto;
+}
+
+@media only screen and (max-width: 420px) {
+
+  .isolator {
+    position: fixed;
+    top: 550px;
+  }
+
+  .big-words {
+    text-align: center;
+    padding-top: 50px;
+
+    .line {
+      display:none;
+      font-weight: 100;
+      font-size: 2em;
+    }
+
+    .head {
+    font-weight: 200;
+    font-size: 3em;
+    }
+  }
+
+  .big-search-form {
+    .input-group {
+      margin: 0 auto;
+
+      .form-control {
+      width: 250px;
+      }
+    }
   }
 }
 

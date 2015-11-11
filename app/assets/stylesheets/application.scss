@@ -1,4 +1,5 @@
 // "bootstrap-sprockets" must be imported before "bootstrap" and "bootstrap/variables"
+
 $baseFontFamily: 'Avant Garde','Helvetica Neue',Arial,Helvetica,sans-serif  !default;
 
 @import "bootstrap-sprockets";
@@ -72,7 +73,7 @@ $baseFontFamily: 'Avant Garde','Helvetica Neue',Arial,Helvetica,sans-serif  !def
     position: fixed;
     -moz-background-size: cover;
     width: 100%;
-    height: 550px;
+    height: 650px;
     top:0px;
     left:0;
     -webkit-transition: opacity ;
@@ -164,11 +165,16 @@ $baseFontFamily: 'Avant Garde','Helvetica Neue',Arial,Helvetica,sans-serif  !def
 
 .isolator {
   position: static;
-  top: 560px;
-  margin: 0 auto;
+  margin: 100px auto;
 }
 
 @media only screen and (max-width: 420px) {
+
+  .carousel {
+    .item {
+      height: 550px;
+    }
+  }
 
   .isolator {
     position: fixed;

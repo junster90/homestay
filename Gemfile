@@ -31,6 +31,9 @@ gem 'bcrypt', '~> 3.1.7'
 # Use OmniAuth to allow facebook logins
 gem 'omniauth-facebook'
 
+# Use Filterrific to implement search
+gem 'filterrific'
+
 # Use Unicorn as the app server
 # gem 'unicorn'
 

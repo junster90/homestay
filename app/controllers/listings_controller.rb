@@ -1,7 +1,30 @@
 class ListingsController < ApplicationController
 
 	def show
+		@listing= Listing.find(params[:id])
 	end
+
+	def index
+    @filterrific = initialize_filterrific(
+    	Listing,
+    	params[:filterrific]
+  	) or return
+
+		#@listings = @filterrific.find.page(params[:page])
+		@listings = @filterrific.find
+
+    respond_to do |format|
+      format.html
+      format.js
+    end
+  end
+
+  def reset_filterrific
+    # Clear session persistence
+    session[:filterrific_listings] = nil
+    # Redirect back to the index action for default filter settings.
+    redirect_to action: :index
+  end
 
 	def new
 		if logged_in?

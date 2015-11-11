@@ -1,0 +1,34 @@
+<div class="container">
+	
+	<div class="listing-info">
+		<h2><%= @listing.name %></h2>
+
+		<p><%= @listing.summary %></p>
+
+	</div>
+
+	<div class="property-info">
+		<h3>Property Type: <%= @listing.hometype %></h3>
+		<h3>Room Type: <%= @listing.roomtype %> Beds</h3>
+		<h3>Accomodates: <%= @listing.max_guest %></h3>			
+	</div>
+
+	<div class="room-info">
+		<h3><%= @listing.bedroom %> Bedrooms</h3>
+		<h3><%= @listing.bed_count %> Beds</h3>
+		<h3><%= @listing.bathroom %> Bathrooms</h3>	
+	</div>
+
+	<div class="address-info">
+		<h2>Located at:</h2>
+		<p><%= @listing.city %></p>
+		<p><%= @listing.state %></p>
+		<p><%= @listing.zip %></p>
+		<p><%= @listing.country %></p>
+	</div>
+
+	<div class="price-info">
+		<h2>Nightly Price: <%= @listing.price %></h2>
+	</div>
+</div>
+

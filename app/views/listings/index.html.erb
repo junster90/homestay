@@ -1,0 +1,11 @@
+<div class="container">
+
+	<h1>Search Results</h1>
+
+	<ul>
+		<% @listings.each do |listing| %>
+		<li><%= link_to "#{listing.name}", "/listings/#{listing.id}"%></li>
+		<% end %>
+	</ul>
+
+</div>

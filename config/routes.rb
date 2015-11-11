@@ -20,6 +20,10 @@ Rails.application.routes.draw do
   post '/listings/new', to: 'listings#create'
 
 
+  get '/listings/index', to: 'listings#index'
+  get '/listings/:id', to: 'listings#show', as: 'listing'
+
+
 
   resources :users, except: :new
 

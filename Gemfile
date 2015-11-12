@@ -34,6 +34,12 @@ gem 'omniauth-facebook'
 # Use Filterrific to implement search
 gem 'filterrific'
 
+# Use CarrierWave for image upload
+gem 'carrierwave'
+
+# Use minimagick for image manipulator
+gem 'mini_magick'
+
 # Use Unicorn as the app server
 # gem 'unicorn'
 

@@ -5,6 +5,8 @@ class User < ActiveRecord::Base
 
   has_many :listings, dependent: :destroy
 
+  mount_uploader :avatar, AvatarUploader
+  
 	def self.from_omniauth(auth)
 		where(auth.slice(:provider, :uid).permit!).first_or_initialize.tap do |user|
     user.provider = auth.provider

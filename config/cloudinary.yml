@@ -1,0 +1,18 @@
+development:
+  cloud_name: dgf16lb1b
+  api_key: '414154129427476'
+  api_secret: q8pggjHgAZC-TR7q0NgB1oj_iwM
+  enhance_image_tag: true
+  static_image_support: false
+production:
+  cloud_name: dgf16lb1b
+  api_key: '414154129427476'
+  api_secret: q8pggjHgAZC-TR7q0NgB1oj_iwM
+  enhance_image_tag: true
+  static_image_support: true
+test:
+  cloud_name: dgf16lb1b
+  api_key: '414154129427476'
+  api_secret: q8pggjHgAZC-TR7q0NgB1oj_iwM
+  enhance_image_tag: true
+  static_image_support: false

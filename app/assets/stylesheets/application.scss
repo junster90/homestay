@@ -19,6 +19,16 @@ $baseFontFamily: 'Avant Garde','Helvetica Neue',Arial,Helvetica,sans-serif  !def
   }
 }
 
+.navbar-nav {
+  .profile-thumb {
+    margin: 0px 10px 0px 25px;
+
+    img { 
+      border-radius: 25px;
+    }
+  }
+}
+
 .navbar-brand {
   padding-top: 10px;
   font-size: 26px;
@@ -42,6 +52,7 @@ $baseFontFamily: 'Avant Garde','Helvetica Neue',Arial,Helvetica,sans-serif  !def
 }
 
 .nav-landing-btn {
+  border-width: 2px;
   border-radius: 0px;
   background: transparent;
   color: white;
@@ -170,9 +181,9 @@ $baseFontFamily: 'Avant Garde','Helvetica Neue',Arial,Helvetica,sans-serif  !def
 
 @media only screen and (max-width: 420px) {
 
-  .carousel {
-    .item {
-      height: 550px;
+  .navbar-nav {
+    .profile-thumb {
+      display: none;
     }
   }
 

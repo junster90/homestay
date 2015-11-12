@@ -1,0 +1,35 @@
+<div class="container">
+
+	<h1>Edit your info</h1>
+
+		<% if @user %>
+			<div id="errors">
+			    <ul>
+		  			<% @user.errors.each do |error, desc| %>
+							<li><%= error %> <%= desc %></li>
+						<% end %>
+			    </ul>
+			</div>
+		<% end %>
+
+	<%= form_for :user, method: "put" do |f| %>
+
+		<div>
+			<%= f.text_field :full_name, :placeholder => "Full Name", :value =>"#{@user.full_name}" %>
+		</div>
+
+		<div>
+			<%= f.text_field :email, :placeholder => "Email", :value =>"#{@user.email}" %>
+		</div>
+
+		<div>
+			<p>Upload a profile image</p>
+				<%= f.hidden_field :avatar_cache %>
+		   	<%= f.file_field :avatar %>
+		</div>
+
+		<%= f.submit "Update" %>
+
+	<% end %>
+
+</div>

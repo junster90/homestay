@@ -31,8 +31,15 @@
 				<ul class="nav navbar-nav pull-right">
 					<li>
 					<button type="button" class="btn btn-default navbar-btn"><%= link_to "Become a host", listings_new_path %></button>
+					<li class="profile-thumb">
+						<% if current_user.fbpic? %>
+						  <%= image_tag current_user.fbpic %>
+						<% else %>
+							<%= image_tag current_user.avatar_url(:thumb) if current_user.avatar? %>
+						<% end %>
+					</li>
 					<li>
-						<a href=""><%= current_user.full_name %></a>
+						<%= link_to "#{current_user.full_name}", user_path(current_user.id) %>
 					</li>
 					<li>
 						<%= link_to "Log Out", logout_path, :method => :delete %>

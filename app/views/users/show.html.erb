@@ -1,0 +1,12 @@
+<div class="container">
+
+<h1><%= @user.full_name %></h1>
+<%= image_tag @user.avatar_url if @user.avatar? %>
+
+<% if current_user.id == @user.id %>
+	<div>
+		<h3>Edit your profile!</h3>
+		<%= link_to "Edit", edit_user_path(current_user.id) %>
+	</div>
+<% end %>
+</div>

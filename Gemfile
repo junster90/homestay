@@ -40,6 +40,9 @@ gem 'carrierwave'
 # Use minimagick for image manipulator
 gem 'mini_magick'
 
+# Use cloudinary 
+gem 'cloudinary'
+
 # Use Unicorn as the app server
 # gem 'unicorn'
 

@@ -23,9 +23,10 @@ Rails.application.routes.draw do
   get '/listings/index', to: 'listings#index'
   get '/listings/:id', to: 'listings#show', as: 'listing'
 
+  get '/users/:id/edit', to: 'users#edit', as: 'edit_user'
+  put '/users/:id/edit', to: 'users#update'
 
-
-  resources :users, except: :new
+  resources :users, only: :show
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

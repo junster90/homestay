@@ -4,7 +4,13 @@
 		<h2><%= @listing.name %></h2>
 
 		<p><%= @listing.summary %></p>
+	</div>
 
+	<div class="property-pic">
+		<h3>Images</h3>
+		<% @listing.listing_pictures.each do |p| %>
+			<%= image_tag p.picture_url %>
+		<% end %>
 	</div>
 
 	<div class="property-info">

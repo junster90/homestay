@@ -38,7 +38,16 @@ class ListingsController < ApplicationController
 	def create
 		@listing = Listing.new(user_params)
 		@listing.user_id = current_user.id
+		pictures = params[:listing][:pictures]
+
 		if @listing.save
+			pictures.each do |p|
+				img = ListingPicture.new
+				img.picture = p
+				img.listing_id = @listing.id
+				img.save
+			end
+
 			flash[:message] = "Successfully added your listing!"
 			redirect_to root_path
 		else
@@ -50,7 +59,7 @@ class ListingsController < ApplicationController
 private
 
 	def user_params
-		params.require(:listing).permit(:name, :summary, :hometype, :roomtype, :max_guest, :line1, :line2, :city, :state, :country, :zip, :bedroom, :bed_count, :bathroom, :price, :user_id)
+		params.require(:listing).permit(:name, :summary, :hometype, :roomtype, :max_guest, :line1, :line2, :city, :state, :country, :zip, :bedroom, :bed_count, :bathroom, :price, :user_id, :pictures)
 	end
 
 end

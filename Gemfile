@@ -35,7 +35,7 @@ gem 'omniauth-facebook'
 gem 'filterrific'
 
 # Use CarrierWave for image upload
-gem 'carrierwave'
+gem 'carrierwave', github: 'carrierwaveuploader/carrierwave'
 
 # Use minimagick for image manipulator
 gem 'mini_magick'

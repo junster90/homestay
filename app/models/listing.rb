@@ -12,6 +12,7 @@ class Listing < ActiveRecord::Base
 	validates :name, :summary, :hometype, :roomtype, :max_guest, :line1, :city, :state, :country, :bedroom, :bed_count, :bathroom, :price, :user_id, presence: true
 
 	belongs_to :user
+  has_many :listing_pictures
 
 	scope :with_hometype, lambda { |hometype| where(hometype: [*hometype]) }
 	scope :with_roomtype, lambda { |roomtype| where(roomtype: [*roomtype]) }
@@ -42,6 +43,9 @@ class Listing < ActiveRecord::Base
       *terms.map { |e| [e] * num_or_conditions }.flatten
     )
   }
+
+ 
+
 
 
 end

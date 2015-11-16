@@ -36,5 +36,19 @@
 	<div class="price-info">
 		<h2>Nightly Price: <%= @listing.price %></h2>
 	</div>
+
+	<% if logged_in? %>
+		<% if @listing.user_id != current_user.id %>
+			<div>
+				<h3>Book Now!</h3>
+					<%= form_for :booking, :url => {:controller => "reservations", :action => "create"} do |f| %>
+					<%= f.hidden_field :listing_id, :value => @listing.id %>
+					<%= f.text_field :check_in, :data => {:provide => "datepicker"} %>
+					<%= f.text_field :check_out, :data => {:provide => "datepicker"} %>
+					<%= f.submit "Book Now"%>
+					<% end %>
+			</div>
+		<% end %>
+	<% end %>
 </div>
 

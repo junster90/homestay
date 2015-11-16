@@ -1,9 +1,15 @@
 // "bootstrap-sprockets" must be imported before "bootstrap" and "bootstrap/variables"
 
+
+
 $baseFontFamily: 'Avant Garde','Helvetica Neue',Arial,Helvetica,sans-serif  !default;
 
+
+@import "bootstrap-datepicker3";
 @import "bootstrap-sprockets";
 @import "bootstrap";
+
+
 
 .navbar {
   padding-top:10px;

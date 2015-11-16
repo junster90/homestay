@@ -26,6 +26,8 @@ Rails.application.routes.draw do
   get '/users/:id/edit', to: 'users#edit', as: 'edit_user'
   put '/users/:id/edit', to: 'users#update'
 
+  post '/reservations/create', to: 'reservations#create'
+
   resources :users, only: :show
 
   # The priority is based upon order of creation: first created -> highest priority.

@@ -5,13 +5,7 @@ class ListingsController < ApplicationController
 	end
 
 	def index
-    @filterrific = initialize_filterrific(
-    	Listing,
-    	params[:filterrific]
-  	) or return
-
-		#@listings = @filterrific.find.page(params[:page])
-		@listings = @filterrific.find
+		@listings = Listing.search(params[:query])
 
     respond_to do |format|
       format.html

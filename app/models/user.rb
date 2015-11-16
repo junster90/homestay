@@ -1,9 +1,11 @@
 class User < ActiveRecord::Base
 
+
 	has_secure_password
 	validates :full_name, :email, presence: true
 	validates :email, uniqueness: true
 
+  has_many :reservations, dependent: :destroy
   has_many :listings, dependent: :destroy
 
   mount_uploader :avatar, AvatarUploader

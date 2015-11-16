@@ -43,6 +43,16 @@ gem 'mini_magick'
 # Use cloudinary 
 gem 'cloudinary'
 
+# Use bootstrap datepicker gem 
+gem 'bootstrap-datepicker-rails', :require => 'bootstrap-datepicker-rails',
+ 	:git => 'git://github.com/Nerian/bootstrap-datepicker-rails.git'
+
+# Use searchkick for elasticsearch
+gem 'searchkick'
+
+# Use validates_overlap to check for overlapping reservations
+gem 'validates_overlap'
+
 # Use Unicorn as the app server
 # gem 'unicorn'
 

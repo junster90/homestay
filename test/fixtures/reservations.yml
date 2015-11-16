@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  user_id: 1
+  listing_id: 1
+  check_in: 2015-11-16
+  check_out: 2015-11-16
+  message: MyString
+
+two:
+  user_id: 1
+  listing_id: 1
+  check_in: 2015-11-16
+  check_out: 2015-11-16
+  message: MyString

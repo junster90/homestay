@@ -14,7 +14,9 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree .
+//= require bootstrap-datepicker
 //= require bootstrap-sprockets
+
 
 $(document).ready(function() {
   $('.myCarousel').carousel({interval: 2000});

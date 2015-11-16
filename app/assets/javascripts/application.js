@@ -20,4 +20,11 @@
 
 $(document).ready(function() {
   $('.myCarousel').carousel({interval: 2000});
+  $('#booking_check_in').datepicker({
+    format: "dd/mm/yyyy",
+    startDate: "today"});
+  $('#booking_check_out').datepicker({
+  format: "dd/mm/yyyy",
+  startDate: "today"});
 });
+

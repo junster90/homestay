@@ -18,10 +18,12 @@
 
 
 				<div class="form-inline big-search-form">
-					<form class="input-group" role="form" action="/listings/index" method="get">
-						<input class="form-control input-lg" type="text" name="query" placeholder="Where do you want to go?">
-						<button type="submit" class="btn btn-success btn-lg">Search</button>
-					</form>
+					<%= form_for :search, :html => {:class => "input-group"}, :role => "form", :method => "get", url: {:controller => "listings", :action => "index"} do |f| %>
+					<%= f.text_field :query, class: "form-control input-lg", :placeholder => "Where do you want to go?" %>
+					<%= f.text_field :check_in, class: "form-control input-lg form-date", :placeholder => "Check In", :data => {:provide => "datepicker"} %>
+					<%= f.text_field :check_out, class: "form-control input-lg form-date", :placeholder => "Check Out", :data => {:provide => "datepicker"} %>
+					<%= f.submit "Search", class: "btn btn-success btn-lg" %>
+					<% end %>
 				</div>
 			</div>
 		</div>
@@ -31,8 +33,6 @@
 <div class="container isolator">
 
 <h1>INDEX PAGE</h1>
-
-<input type="text" data-provide='datepicker'>
 
 </div>
 

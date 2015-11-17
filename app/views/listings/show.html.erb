@@ -39,6 +39,8 @@
 
 	<% if logged_in? %>
 		<% if @listing.user_id != current_user.id %>
+		<%= content_tag :div, class: "disabled_dates", data: {dates: booked_dates(@listing.id)} do %>
+		<% end %>
 			<div>
 				<h3>Book Now!</h3>
 					<%= form_for :booking, :url => {:controller => "reservations", :action => "create"} do |f| %>

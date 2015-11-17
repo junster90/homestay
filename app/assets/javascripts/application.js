@@ -18,13 +18,25 @@
 //= require bootstrap-sprockets
 
 
-$(document).ready(function() {
+$(document).on('page:change', function() {
   $('.myCarousel').carousel({interval: 2000});
+
+  $('#search_check_in').datepicker({
+    format: "yyyy/mm/dd",
+    autoclose: true,
+    startDate: '+1d'});
+  $('#search_check_out').datepicker({
+  	format: "yyyy/mm/dd",
+  	startDate: '+2d'});
+
   $('#booking_check_in').datepicker({
-    format: "dd/mm/yyyy",
-    startDate: "today"});
+    format: "yyyy/mm/dd",
+    autoclose: true,
+    datesDisabled: $('.disabled_dates').data('dates'),
+    startDate: '+1d'});
   $('#booking_check_out').datepicker({
-  format: "dd/mm/yyyy",
-  startDate: "today"});
+  format: "yyyy/mm/dd",
+  datesDisabled: $('.disabled_dates').data('dates'),
+  startDate: '+2d'});
 });
 

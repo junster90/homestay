@@ -113,6 +113,9 @@ GEM
       thor (>= 0.14, < 2.0)
     json (1.8.3)
     jwt (1.5.2)
+    kaminari (0.16.3)
+      actionpack (>= 3.0.0)
+      activesupport (>= 3.0.0)
     loofah (2.0.3)
       nokogiri (>= 1.5.9)
     mail (2.6.3)
@@ -171,6 +174,8 @@ GEM
       thor (>= 0.18.1, < 2.0)
     rake (10.4.2)
     rdoc (4.2.0)
+    responders (2.1.0)
+      railties (>= 4.2.0, < 5)
     rest-client (1.8.0)
       http-cookie (>= 1.0.2, < 2.0)
       mime-types (>= 1.16, < 3.0)
@@ -232,10 +237,12 @@ DEPENDENCIES
   filterrific
   jbuilder (~> 2.0)
   jquery-rails
+  kaminari
   mini_magick
   omniauth-facebook
   pg
   rails (= 4.2.4)
+  responders
   sass-rails (~> 5.0)
   sdoc (~> 0.4.0)
   searchkick

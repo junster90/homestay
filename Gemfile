@@ -53,6 +53,10 @@ gem 'searchkick'
 # Use validates_overlap to check for overlapping reservations
 gem 'validates_overlap'
 
+# Use kaminari for pagination
+gem 'kaminari'
+
+gem 'responders'
 # Use Unicorn as the app server
 # gem 'unicorn'
 

@@ -1,16 +1,21 @@
 class ListingsController < ApplicationController
 
+	respond_to :html, :js
+
 	def show
-		@listing= Listing.find(params[:id])
+		@listing = Listing.find(params[:id])
 	end
 
 	def index
-		@listings = Listing.search(params[:query])
-
-    respond_to do |format|
-      format.html
-      format.js
-    end
+		@listings = Listing.search(params[:search][:query])
+		start_date = Date.parse(params[:search][:check_in])
+		end_date = Date.parse(params[:search][:check_out])
+		
+		byebug
+		@listings.each do |room|
+			booked_dates(room.id)
+		end
+		
   end
 
   def reset_filterrific
@@ -33,7 +38,7 @@ class ListingsController < ApplicationController
 		@listing = Listing.new(user_params)
 		@listing.user_id = current_user.id
 		pictures = params[:listing][:pictures]
-
+		byebug
 		if @listing.save
 			pictures.each do |p|
 				img = ListingPicture.new

@@ -7,23 +7,19 @@ class ListingsController < ApplicationController
 	end
 
 	def index
-		@listings = Listing.search(params[:search][:query])
+		@results = Listing.search(params[:search][:query])
 		start_date = Date.parse(params[:search][:check_in])
 		end_date = Date.parse(params[:search][:check_out])
+		@listings = []
 		
-		byebug
-		@listings.each do |room|
-			booked_dates(room.id)
+		@results.each do |result|
+			qualify = []
+			result.reservations.each do |reservation|
+				qualify << overlaps?(start_date, end_date, reservation.check_in, reservation.check_out)
+			end
+			@listings << result if !qualify.include?(true)
 		end
-		
-  end
-
-  def reset_filterrific
-    # Clear session persistence
-    session[:filterrific_listings] = nil
-    # Redirect back to the index action for default filter settings.
-    redirect_to action: :index
-  end
+	end
 
 	def new
 		if logged_in?
@@ -61,4 +57,7 @@ private
 		params.require(:listing).permit(:name, :summary, :hometype, :roomtype, :max_guest, :line1, :line2, :city, :state, :country, :zip, :bedroom, :bed_count, :bathroom, :price, :user_id, :pictures)
 	end
 
+  def overlaps?(start_date, end_date, booking_start_date, booking_end_date)
+    (start_date - booking_end_date) * (booking_start_date - end_date) >= 0
+  end
 end

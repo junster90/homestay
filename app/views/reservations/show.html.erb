@@ -1,0 +1,12 @@
+<div class="container">
+	<div>
+		<h3>You have reserved:</h3>
+		<p><%= @reservation.listing.name %></p>
+		<p>For <%= @reservation.check_out.mjd - @reservation.check_in.mjd %> Nights, from <%= @reservation.check_in %> to <%= @reservation.check_out %></p>
+
+		<p>Your host is: <%= @reservation.listing.user.full_name %></p>
+	</div>
+
+
+
+</div>

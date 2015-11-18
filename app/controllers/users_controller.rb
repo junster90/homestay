@@ -3,6 +3,7 @@ class UsersController < ApplicationController
 	def show
 		@user = User.find(params[:id])
 		@reservations = current_user.reservations
+		@business = current_user.listings
 	end
 
 	def new

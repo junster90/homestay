@@ -1,4 +1,14 @@
 class ReservationsController < ApplicationController
+	
+	def show
+		@reservation = Reservation.find(params[:id])
+		if current_user == @reservation.user
+			render 'show'
+		else
+			redirect_to root_path
+		end
+	end
+
 	def create
 		booking = Reservation.new(user_params)
 		booking.user_id = current_user.id

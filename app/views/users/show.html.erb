@@ -12,10 +12,24 @@
 		<h3>My Reservations</h3>
 		<% @reservations.each do |r| %>
 			<div>
-				<p><%= r.listing.name %></p>
+				<% byebug %>
+				<%= link_to r.listing.name, "/reservations/#{r.id}" %>
 				<p>From <%= r.check_in %> to <%= r.check_out %></p>
 				<p>For <%= r.check_out.mjd - r.check_in.mjd %> Nights stay</p>
 			</div>
+		<% end %>
+	</div>
+	<div>
+		<h3>Listings booked by others</h3>
+		<% @business.each do |b| %>
+		<% b.reservations.each do |c| %>
+			<div>
+				<h4><%= c.listing.name %></h4>
+				<p>From <%= c.check_in %> to <%= c.check_out %></p>
+				<p>For <%= c.check_out.mjd - c.check_in.mjd %> Nights stay</p>
+				<p>By <%= c.user.full_name %></p>
+			</div>
+			<% end %>
 		<% end %>
 	</div>
 <% end %>

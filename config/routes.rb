@@ -27,6 +27,7 @@ Rails.application.routes.draw do
   put '/users/:id/edit', to: 'users#update'
 
   post '/reservations/create', to: 'reservations#create'
+  get '/reservations/:id', to: 'reservations#show'
 
   resources :users, only: :show
 

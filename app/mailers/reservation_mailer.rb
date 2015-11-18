@@ -1,11 +1,12 @@
 class ReservationMailer < ApplicationMailer
 
-	def booking_email(customer, host, reservation_id)
-		@host = host
-		@customer = customer
-		@reservation = Reservation.find(reservation_id)
-		@url = "http://localhost:3000"
+	def booking_email(reservation)
+		@reservation = reservation
+		@customer = reservation.user
+		@room = reservation.listing
+		@host = @room.user
 
-		mail(to: @host, subject: "You have received a booking from #{@customer}")
+
+		mail(to: "#{@host.email}", subject: "You have received a booking from #{@customer.full_name}")
 	end
 end

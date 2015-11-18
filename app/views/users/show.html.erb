@@ -12,7 +12,7 @@
 		<h3>My Reservations</h3>
 		<% @reservations.each do |r| %>
 			<div>
-				<% byebug %>
+
 				<%= link_to r.listing.name, "/reservations/#{r.id}" %>
 				<p>From <%= r.check_in %> to <%= r.check_out %></p>
 				<p>For <%= r.check_out.mjd - r.check_in.mjd %> Nights stay</p>

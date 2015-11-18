@@ -12,7 +12,7 @@ class ReservationsController < ApplicationController
 	def create
 		booking = Reservation.new(user_params)
 		booking.user_id = current_user.id
-		byebug
+
 		if booking.save
 			flash[:message] = "Your booking is successful!"
 			redirect_to root_path

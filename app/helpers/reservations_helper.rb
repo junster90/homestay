@@ -3,8 +3,9 @@ module ReservationsHelper
 		dates =[]
 		bookings = Reservation.where(listing_id: listing_id)
 		bookings.each do |b|
-			dates += (b.check_in..b.check_out).map(&:to_s)
+			dates += (b.check_in..b.check_out-1).map(&:to_s)
 		end
+		
 		return dates
 	end
 end

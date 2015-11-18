@@ -14,6 +14,7 @@ class ReservationsController < ApplicationController
 		booking.user_id = current_user.id
 
 		if booking.save
+			SendEmailJob.perform(booking)
 			flash[:message] = "Your booking is successful!"
 			redirect_to root_path
 		else

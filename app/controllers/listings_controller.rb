@@ -12,12 +12,18 @@ class ListingsController < ApplicationController
 		end_date = Date.parse(params[:search][:check_out]) if params[:search][:check_in] != ""
 		@listings = []
 		
-		@results.each do |result|
-			qualify = []
-			result.reservations.each do |reservation|
-				qualify << overlaps?(start_date, end_date, reservation.check_in, reservation.check_out)
+		if start_date.nil? || end_date.nil?
+			@results.each do |result|
+				@listings << result
 			end
-			@listings << result if !qualify.include?(true)
+		else
+			@results.each do |result|
+				qualify = []
+				result.reservations.each do |reservation|
+					qualify << overlaps?(start_date, end_date, reservation.check_in, reservation.check_out)
+				end
+				@listings << result if !qualify.include?(true)
+			end
 		end
 	end
 

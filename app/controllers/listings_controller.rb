@@ -7,9 +7,10 @@ class ListingsController < ApplicationController
 	end
 
 	def index
+
 		@results = Listing.search(params[:search][:query])
-		start_date = Date.parse(params[:search][:check_in]) if params[:search][:check_in] != ""
-		end_date = Date.parse(params[:search][:check_out]) if params[:search][:check_in] != ""
+		start_date = Date.parse(params[:start]) if params[:start] != ""
+		end_date = Date.parse(params[:end]) if params[:end] != ""
 		@listings = []
 		
 		if start_date.nil? || end_date.nil?

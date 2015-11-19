@@ -21,13 +21,10 @@
 $(document).on('page:change', function() {
   $('.myCarousel').carousel({interval: 2000});
 
-  $('#search_check_in').datepicker({
+  $('.input-daterange').datepicker({
     format: "yyyy/mm/dd",
     autoclose: true,
     startDate: '+1d'});
-  $('#search_check_out').datepicker({
-  	format: "yyyy/mm/dd",
-  	startDate: '+2d'});
 
   $('#booking_check_in').datepicker({
     format: "yyyy/mm/dd",
@@ -39,4 +36,6 @@ $(document).on('page:change', function() {
   datesDisabled: $('.disabled_dates').data('dates'),
   startDate: '+2d'});
 });
+
+
 

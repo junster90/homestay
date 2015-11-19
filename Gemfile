@@ -56,6 +56,9 @@ gem 'validates_overlap'
 # Use kaminari for pagination
 gem 'kaminari'
 
+# Use sidekiq for background jobs
+gem 'sidekiq'
+
 gem 'responders'
 # Use Unicorn as the app server
 # gem 'unicorn'

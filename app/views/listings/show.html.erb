@@ -43,7 +43,7 @@
 		<% end %>
 			<div>
 				<h3>Book Now!</h3>
-					<%= form_for :booking, :url => {:controller => "reservations", :action => "create"} do |f| %>
+					<%= form_for :booking, :method => "get", :url => {:controller => "reservations", :action => "new"} do |f| %>
 					<%= f.hidden_field :listing_id, :value => @listing.id %>
 					<%= f.text_field :check_in, :data => {:provide => "datepicker"} %>
 					<%= f.text_field :check_out, :data => {:provide => "datepicker"} %>

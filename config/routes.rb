@@ -26,6 +26,7 @@ Rails.application.routes.draw do
   get '/users/:id/edit', to: 'users#edit', as: 'edit_user'
   put '/users/:id/edit', to: 'users#update'
 
+  get '/reservations/new', to: 'reservations#new'
   post '/reservations/create', to: 'reservations#create'
   get '/reservations/:id', to: 'reservations#show'
 

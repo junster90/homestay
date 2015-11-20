@@ -63,6 +63,9 @@ gem 'responders'
 # Use Unicorn as the app server
 # gem 'unicorn'
 
+# Use braintree for payment API wrapper
+gem 'braintree'
+
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 

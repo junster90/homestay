@@ -1,0 +1,36 @@
+<div class="container">
+	
+	<div>
+		<h1>Booking Confirmation</h1>
+		<p>You are about to book <%= @booking.listing.name %> for <%= @booking.check_out.mjd - @booking.check_in.mjd %> nights.</p>
+		<p>From <%= @booking.check_in %> to <%= @booking.check_out %></p>
+	</div>
+
+	<div>
+		<h1>Pay for your booking now!</h1>
+		<p>Nightly price: <%= @booking.listing.price %></p>
+		<p>Nights booked: <%= @booking.check_out.mjd - @booking.check_in.mjd %></p>
+		<p>Grand total: <%= @total %></p>
+	</div>
+
+	<div class="col-sm-6">
+		<%= form_for :booking, url: {:controller => "reservations", :action => "create"} do |f| %>
+			<%= f.hidden_field :listing_id, value: @booking.listing_id %>
+			<%= f.hidden_field :check_in, value: @booking.check_in %>
+			<%= f.hidden_field :check_out, value: @booking.check_out %>
+			<%= f.hidden_field :message, value: @booking.message %>
+			<div id="dropin"></div>
+			<%= f.submit "Pay #{@total}", class: "btn btn-lg btn-success" %>
+		<% end %>
+	</div>
+
+	<script src="https://js.braintreegateway.com/v2/braintree.js"></script>
+	<script>  
+		braintree.setup(
+		  "<%= @client_token %>",
+		  'dropin', {
+		    container: 'dropin'
+		});
+	</script>
+
+</div>
